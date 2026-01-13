@@ -4,3 +4,190 @@
 *:after {
   box-sizing: border-box;
 }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+#wrapper {
+  margin: 2rem auto;
+  width: min(100% - 3rem, 1000px);
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border: 5px solid darkturquoise;
+  border-radius: 10px;
+
+}
+
+#top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.siteName a {
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+#tools a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
+
+nav {
+  background-color: black;
+  padding: 0.75rem 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+nav li {
+  color: white;
+  cursor: pointer;
+}
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.hero-image img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.hero-text {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  color: black;
+  border-radius: 8px;
+  width: 40%;
+  line-height: 0.95;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.hero-text h2 {
+  margin: 0 0 0.25rem 0;
+  line-height: 1.1;
+}
+
+.hero-text p {
+  margin: 0.15rem 0;
+}
+
+.hero-text button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: darkturquoise;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2, ease;
+}
+
+.hero-text button:hover {
+  transform: scale(1.05);
+}
+
+.upgrades-reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.upgrades {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.upgrades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+.upgrade-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upgrade {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: darkturquoise;
+  width: 150px;
+  height: 100px;
+  margin: 0 auto 0.5rem auto;
+}
+
+.upgrade-card h3 {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.reviews {
+  display: block;
+}
+
+.review h3 {
+  font-style: italic;
+  font-weight: normal;
+}
+
+@media (min-width: 800px) {
+  body {
+    background-image: url('/images/site/checkerboard.jpg');
+    background-size: 150px 150px;
+    background-repeat: repeat;
+    background-position: center;
+  }
+
+  .upgrades-reviews {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .upgrades, .reviews {
+    width: 48%;
+  }
+}
