@@ -28,6 +28,8 @@ app.set("layout", "./layouts/layout") //not at views root
 app.use(static)
 // Index route
 app.get("/", utilities.handleErrors(baseController.buildHome))
+// Intentional Error Route for Task 3
+app.get("/trigger-error", utilities.handleErrors(baseController.triggerError))
 // Inventory routes
 app.use("/inv", inventoryRoute)
 //File Not Found Route - must be the last route in list

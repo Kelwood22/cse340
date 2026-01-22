@@ -17,6 +17,7 @@ body {
   width: min(100% - 3rem, 1000px);
   padding: 2rem;
   background-color: #fff;
+  color: black;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   border: 5px solid darkturquoise;
   border-radius: 10px;
@@ -34,17 +35,19 @@ body {
   font-size: 2rem;
   font-weight: bold;
   color: black;
+  background-color: white;
   text-decoration: none;
 }
 
 #tools a {
   text-transform: uppercase;
-  text-decoration: none;
   color: black;
+  background-color: white;
 }
 
 nav {
   background-color: black;
+  color: white;
   padding: 0.75rem 0;
 }
 
@@ -59,7 +62,21 @@ nav ul {
 
 nav li {
   color: white;
+  background-color: black;
   cursor: pointer;
+}
+
+nav a {
+  color: white;
+  background-color: black;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+}
+
+nav a:hover {
+  color: black;
+  background-color: white;
 }
 
 
@@ -152,6 +169,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: black;
   background-color: darkturquoise;
   width: 150px;
   height: 100px;
@@ -162,6 +180,7 @@ main {
   margin: 0;
   font-size: 0.9rem;
   color: #333;
+  background-color: white;
 }
 
 .reviews {
@@ -173,6 +192,24 @@ main {
   font-weight: normal;
 }
 
+#vehicle-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+#vehicle-detail .vehicle-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#vehicle-detail .vehicle-info {
+  max-width: 600px;
+}
+
+/* Large Screens */
 @media (min-width: 800px) {
   body {
     background-image: url('/images/site/checkerboard.jpg');
@@ -190,4 +227,15 @@ main {
   .upgrades, .reviews {
     width: 48%;
   }
+
+  #vehicle-detail {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  #vehicle-detail .vehicle-image,
+  #vehicle-detail .vehicle-info {
+    flex: 1;
+  }
+  
 }
