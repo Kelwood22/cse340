@@ -132,7 +132,7 @@ main {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: transform 0.2, ease;
+  transition: transform 0.2s, ease;
 }
 
 .hero-text button:hover {
