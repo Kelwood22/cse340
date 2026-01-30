@@ -1,0 +1,24 @@
+
+<h1><%= title %></h1>
+
+<!-- Flash Messages -->
+<%- messages() %>
+
+<!-- Server-side validation errors -->
+<% if (errors) { %>
+        <ul class="notice">
+    <% errors.array().forEach(error => { %>
+        <li><%= error.msg %></li>
+    <% }) %>
+    </ul>
+<% } %>
+
+<!-- Add Classification Form -->
+ <form action="/inv/add-classification" method="post" class="classification-form">
+    <p>Classification names must contain only letters. No spaces or special characters allowed.</p>
+
+    <label for="classification_name">Classification Name:</label>
+    <input type="text" id="classification_name" name="classification_name" required pattern="^[A-Za-z]+$" title="Letters only. No spaces or special characters.">
+
+    <button type="submit">Add Classification</button>
+</form>

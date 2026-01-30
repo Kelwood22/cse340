@@ -343,6 +343,66 @@ main {
   line-height: 1.3;
 }
 
+/* Add Inventory Form */
+.inventory-form {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: black;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inventory-form label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.inventory-form input,
+.inventory-form textarea,
+.inventory-form select {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.inventory-form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.inventory-form button {
+  padding: 0.75rem;
+  background-color: darkturquoise;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.inventory-form button:hover {
+  background-color: #004c99;
+}
+
+/* Flash + error styling for consistency */
+.notice,
+.flash {
+  max-width: 500px;
+  margin: 1rem auto;
+  padding: 1rem;
+  background: white;
+  border: 1px solid darkturquoise;
+  color: black;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
 
 /* Large Screens */
 @media (min-width: 800px) {

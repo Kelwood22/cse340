@@ -4,6 +4,17 @@
 <!-- Flash Messages -->
 <%- messages() %>
 
+<!-- Server-side validation errors -->
+<% if (errors) { %>
+    <ul class="notice">
+        <% errors.array().forEach(error=> { %>
+            <li>
+                <%= error.msg %>
+            </li>
+            <% }) %>
+    </ul>
+    <% } %>
+
 <!-- Login Form -->
 <form action="/account/login" method="post" class="login-form">
     <label for="account_email">Email:</label>
