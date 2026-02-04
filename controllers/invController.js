@@ -107,8 +107,8 @@ invCont.buildAddInventory = async function (req, res, next) {
         inv_model: "",
         inv_year: "",
         inv_description: "",
-        inv_image: "",
-        inv_thumbnail: "",
+        inv_image: "/images/vehicles/no-image.png",
+        inv_thumbnail: "/images/vehicles/no-image-tn.png",
         inv_price: "",
         inv_miles: "",
         inv_color: "",
@@ -134,14 +134,18 @@ invCont.addInventory = async function (req, res, next) {
         inv_color,      
     } = req.body
 
+    // Normalize paths (remove leading slash if user typed one)
+    const cleanImage = (inv_image || "/images/vehicles/no-image.png").replace(/^\//, "")
+    const cleanThumbnail = (inv_thumbnail || "/images/vehicles/no-image-tn.png").replace(/^\//, "")
+
     const addResult = await invModel.addInventory(
         classification_id,
         inv_make,
         inv_model,
         inv_year,
         inv_description,
-        inv_image,
-        inv_thumbnail,
+        cleanImage,
+        cleanThumbnail,
         inv_price,
         inv_miles,
         inv_color,
@@ -163,8 +167,8 @@ invCont.addInventory = async function (req, res, next) {
             inv_model,
             inv_year,
             inv_description,
-            inv_image,
-            inv_thumbnail,
+            inv_image: cleanImage || "/images/vehicles/no-image.png",
+            inv_thumbnail: cleanThumbnail || "/images/vehicles/no-image-tn.png",
             inv_price,
             inv_miles,
             inv_color,
@@ -236,13 +240,16 @@ invCont.updateInventory = async function (req, res, next) {
         classification_id,  
     } = req.body
 
+    const cleanImage = inv_image.replace(/^\//, "")
+    const cleanThumbnail = inv_thumbnail.replace(/^\//, "")
+
     const updateResult = await invModel.updateInventory(
         inv_id,
         inv_make,
         inv_model,
         inv_description,
-        inv_image,
-        inv_thumbnail,
+        cleanImage,
+        cleanThumbnail,
         inv_price,
         inv_year,
         inv_miles,
@@ -268,8 +275,8 @@ invCont.updateInventory = async function (req, res, next) {
             inv_model,
             inv_year,
             inv_description,
-            inv_image,
-            inv_thumbnail,
+            cleanImage,
+            cleanThumbnail,
             inv_price,
             inv_miles,
             inv_color,

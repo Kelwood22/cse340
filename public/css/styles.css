@@ -379,7 +379,7 @@ main {
 .inventory-form button {
   padding: 0.75rem;
   background-color: darkturquoise;
-  color: white;
+  color: black;
   border: none;
   border-radius: 4px;
   font-size: 1rem;
@@ -528,7 +528,7 @@ noscript {
 .edit-inventory-form button {
   padding: 0.75rem;
   background-color: darkturquoise;
-  color: white;
+  color: black;
   border: none;
   border-radius: 4px;
   font-size: 1rem;
