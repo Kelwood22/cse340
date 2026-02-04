@@ -113,4 +113,25 @@ validate.checkAddInvData = async (req, res, next) => {
     next()
 }
 
+/* ****************************
+ * Check inventory data and return errors to edit-inventory view
+ * **************************** */
+validate.checkUpdateData = async (req, res, next) => {
+    const errors = validationResult(req)
+    if (!errors.isEmpty()) {
+        let nav = await utilities.getNav()
+        let classificationList = await utilities.buildClassificationList(req.body.classification_id)
+
+        return res.render("inventory/edit-inventory", {
+            title: `Edit ${req.body.inv_make} ${req.body.inv_model}`,
+            nav,    
+            classificationList,
+            errors,
+            inv_id: req.body.inv_id,
+            ...req.body,
+        })
+    }
+    next()
+}
+
 module.exports = validate
