@@ -144,5 +144,26 @@ Util.checkLogin = (req, res, next) => {
     }
 }
 
+/* **************************
+ * Check account type for inventory access
+ * ***************************** */
+Util.checkAccountType = function (req, res, next) {
+    const accountData = res.locals.accountData
+
+    // If not logged or missing account type
+    if (!accountData) {
+        req.flash("notice", "Please log in to access this page.")
+        return res.redirect("/account/login")
+    }
+
+    // Only allow Employee or Admin access
+    if (accountData.account_type === "Employee" || accountData.account_type === "Admin") {
+        return next()
+    }
+
+    // Otherwise deny access
+    req.flash("notice", "You do not have permission to access this page.")
+    return res.redirect("/account/login")
+}
 
 module.exports = Util
