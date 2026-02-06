@@ -238,7 +238,7 @@ main {
 .login-form button {
   padding: 0.75rem;
   background-color: darkturquoise;
-  color: white;
+  color: black;
   border: none;
   border-radius: 4px;
   font-size: 1rem;
@@ -248,6 +248,7 @@ main {
 
 .login-form button:hover {
   background-color: #004c99;
+  color: white;
 }
 
 .flash {
@@ -268,7 +269,8 @@ main {
 }
 
 .register-link a {
-  color: darkturquoise;
+  background-color: darkturquoise;
+  color: black;
   text-decoration: none;
   font-weight: 600;
 }
@@ -306,7 +308,7 @@ main {
 .register-form button {
   padding: 0.75rem;
   background-color: darkturquoise;
-  color: white;
+  color: black;
   border: none;
   border-radius: 4px;
   font-size: 1rem;
@@ -316,6 +318,7 @@ main {
 
 .register-form button:hover {
   background-color: #004c99;
+  color: white;
 }
 
 .register-form p {
@@ -339,6 +342,10 @@ main {
 .password-rules {
   font-size: 0.85rem;
   color: black;
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: darkturquoise 1px solid;
   margin-bottom: 0.5rem;
   line-height: 1.3;
 }
